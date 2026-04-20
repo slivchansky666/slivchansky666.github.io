@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+  <html lang="ru">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Колесо лудомании</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+    <h1>Колесо лудомании</h1>
+    <p class="subtitle">Крутите — и пусть удача решит</p>
+
+    <div class="layout">
+      <div class="wheel-wrap">
+        <div class="wheel-outer">
+          <div class="pointer">
+            <svg viewBox="0 0 36 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 38 L2 8 Q18 0 34 8 Z" fill="#f5c842" stroke="#0d0d14" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <canvas id="wheelCanvas"></canvas>
+          <button class="center-btn" id="spinBtn" onclick="spin()">SPIN</button>
+        </div>
+
+        <div class="result-box" id="resultBox">
+          <span class="result-empty">Нажмите SPIN</span>
+        </div>
+      </div>
+
+      <div class="sidebar">
+        <div class="panel">
+          <div class="panel-title">Варианты</div>
+          <ul class="seg-list" id="segList"></ul>
+          <div class="add-form">
+            <input type="text" id="newSeg" placeholder="Добавить вариант…" maxlength="40" onkeydown="if(event.key==='Enter')addSegment()">
+            <button class="btn-add" onclick="addSegment()">+ Добавить</button>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-title">История</div>
+          <ul class="history-list" id="historyList">
+            <li style="color:var(--muted);font-size:0.82rem">Пока пусто</li>
+          </ul>
+          <button class="btn-clear" onclick="clearHistory()">Очистить историю</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+    </body>
+</html>
